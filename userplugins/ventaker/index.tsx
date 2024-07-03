@@ -15,17 +15,53 @@ const settings = definePluginSettings({
         description: "Enter the link ID to connect your background to",
         restartNeeded: true
     },
-    interval: {
+    intervalRate: {
         type: OptionType.NUMBER,
         description: "The rate (in seconds) at which to check for new backgrounds",
         restartNeeded: false
-    }
-    // bgFit: {
-    //     type: OptionType.STRING,
-    //     description: "Background Fit",
-    //     default: "auto 100vh",
-    //     restartNeeded: false
-    // }
+    },
+    mainColor: {
+        type: OptionType.STRING,
+        description: "Main Background Color",
+        default: "rgba(0,0,0,0.2)",
+        restartNeeded: true
+    },
+    secondaryColor: {
+        type: OptionType.STRING,
+        description: "Secondary Background Color",
+        default: "rgba(0,0,0,0.4)",
+        restartNeeded: true
+    },
+    tertiaryColor: {
+        type: OptionType.STRING,
+        description: "Tertiary Background Color",
+        default: "rgba(0,0,0,0)",
+        restartNeeded: true
+    },
+    titleBackground: {
+        type: OptionType.STRING,
+        description: "Title Background Color",
+        default: "rgba(0,0,0,0.9)",
+        restartNeeded: true
+    },
+    chatHeaderBackground: {
+        type: OptionType.STRING,
+        description: "Chat Header Background Color",
+        default: "rgba(0,0,0,0.4)",
+        restartNeeded: true
+    },
+    sidebarBackground: {
+        type: OptionType.STRING,
+        description: "Sidebar Background Color",
+        default: "rgba(0,0,0,0.9)",
+        restartNeeded: true
+    },
+    messageBackground: {
+        type: OptionType.STRING,
+        description: "Message Background Color",
+        default: "rgba(0,0,0,0.2)",
+        restartNeeded: true
+    },
 });
 
 // Function to fetch the background URL from Walltaker
@@ -47,8 +83,6 @@ async function fetchBackgroundUrl(linkId) {
 function setBackground(url) {
     console.log(`Setting background to: ${url}`);
 
-    // Remove existing video element if any
-
     // Check if the URL is the same as the current video URL
     if (url === currentVideoUrl) {
         console.log("Same video URL, continuing playback.");
@@ -56,7 +90,6 @@ function setBackground(url) {
     }
 
     currentVideoUrl = url;
-
 
     let videoElement = document.getElementById("walltaker-video-background");
 
@@ -107,20 +140,35 @@ function setBackgroundImage(url) {
 
 // Function to apply additional CSS styles
 function applyStyles(settings) {
-    console.error("Applying styles with settings:", settings);
-    let styleElement = document.getElementById("walltaker-additional-styles");
+    console.log("Applying styles with settings:", settings);
+    let styleElement = document.getElementById("ventaker-custom-styles");
     if (!styleElement) {
         styleElement = document.createElement("style");
-        styleElement.id = "walltaker-additional-styles";
+        styleElement.id = "ventaker-custom-styles";
         document.head.appendChild(styleElement);
     }
     styleElement.innerHTML = `
         :root {
+            --background-primary: ${settings.store.mainColor};
+            --background-secondary: ${settings.store.secondaryColor};
+            --background-tertiary: ${settings.store.tertiaryColor};
         }
         body {
             background-size: cover !important;
             background-position: center !important;
             background-repeat: no-repeat;
+        }
+        .titleBar-1it3bQ {
+            background: ${settings.store.titleBackground} !important;
+        }
+        .container-ZMc96U.themed-Hp1KC_ {
+            background: ${settings.store.chatHeaderBackground} !important;
+        }
+        .scroller-3X7KbA {
+            background: ${settings.store.sidebarBackground} !important;
+        }
+        .messageListItem-ZZ7v6g {
+            background: ${settings.store.messageBackground} !important;
         }
     `;
 }
@@ -140,7 +188,7 @@ function startBackgroundUpdate(linkId, interval) {
     }
 
     updateBackground(); // Initial update
-    setInterval(updateBackground, interval * 6000); // Convert milliseconds to seconds
+    setInterval(updateBackground, interval * 6000); // Convert minutes to milliseconds
 }
 
 
@@ -154,8 +202,8 @@ export default definePlugin({
     async start() {
         console.log("Plugin loaded with settings:", settings);
         const { link } = settings.store;
-        const { interval } = settings.store;
-        startBackgroundUpdate(link, interval);
+        const { intervalRate } = settings.store;
+        startBackgroundUpdate(link, intervalRate);
         applyStyles(settings);
     }
 });
