@@ -13,4 +13,4 @@ A Vencord plugin to allow for walltaker backgrounds to be set on Vencord (suppor
 4. enable the plugin in discord settings
 
 ## Other Info
-**This is intended to be used with the [https://github.com/Eldrazi7604/Walltaker-Vision]Walltaker-Vision theme for Vencord. This theme is transparent and allows for editing by changing the values found within the "Walltaker-Vision.theme.css" file**
+**This is intended to be used with the [https://github.com/Eldrazi7604/Walltaker-Vision] theme for Vencord. This theme is transparent and allows for editing by changing the values found within the "Walltaker-Vision.theme.css" file**
