@@ -35,13 +35,13 @@ const settings = definePluginSettings({
     tertiaryColor: {
         type: OptionType.STRING,
         description: "Tertiary Background Color",
-        default: "rgba(0,0,0,0)",
+        default: "rgba(0,0,0,0.4)",
         restartNeeded: true
     },
     titleBackground: {
         type: OptionType.STRING,
         description: "Title Background Color",
-        default: "rgba(0,0,0,0.9)",
+        default: "rgba(0,0,0,0.4)",
         restartNeeded: true
     },
     chatHeaderBackground: {
@@ -53,7 +53,7 @@ const settings = definePluginSettings({
     sidebarBackground: {
         type: OptionType.STRING,
         description: "Sidebar Background Color",
-        default: "rgba(0,0,0,0.9)",
+        default: "rgba(0,0,0,0.4)",
         restartNeeded: true
     },
     messageBackground: {
@@ -646,13 +646,13 @@ function applyStyles(settings) {
             order: 1;
         }
         .typeWindows_a934d8>.wordmark_a934d8:before {
-            content: "ClearVision";
+            content: "Ventaker";
             color: rgba(255, 255, 255, .7);
             font-size: 14px;
             text-shadow: 0 0 3px #000;
         }
         .typeWindows_a934d8>.wordmark_a934d8:after {
-            content: "v6.9.0";
+            content: "v1.0.2";
             color: rgba(255, 255, 255, .3);
             font-family: var(--code-font);
             font-size: 10px;
