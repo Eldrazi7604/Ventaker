@@ -1,6 +1,6 @@
 <div align="center">
 
-# Ventaker v1
+# Ventaker v1.0.2
 A Vencord plugin to allow for walltaker backgrounds to be set on Vencord (supports video and sound)
 
 ## Installing
