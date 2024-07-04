@@ -17,4 +17,4 @@ A Vencord plugin to allow for walltaker backgrounds to be set on Vencord (suppor
 ## Usage
 Once the plugin is enabled, open its settings box located on the plugin square itself. Inside you will find many color tweaks (only for when not using a theme, also may or may not work. I'm busy so I'm getting it out the door now, instead of checking it :3) and two values you **MUST** change, which are the interval for checking for new backgrounds, and the link.
 ## Other Info
-**This is intended to be used with the https://github.com/Eldrazi7604/Walltaker-Vision theme for Vencord. Without a transparent theme, you will be unable to see the background (changing this, next release won't have this requirement) This theme is transparent and allows for editing by changing the values found within the "Walltaker-Vision.theme.css" file**
+**This is intended to be used with the https://github.com/Eldrazi7604/Walltaker-Vision theme for Vencord. This theme is transparent and allows for editing by changing the values found within the "Walltaker-Vision.theme.css" file**
