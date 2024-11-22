@@ -2,6 +2,8 @@
 
 # Ventaker v1.0.2
 A Vencord plugin to allow for walltaker backgrounds to be set on Vencord (supports video and sound)
+Also check out the absolutely great plugin for better discord: https://github.com/Lycraon/Lycraons-Walltaker-BBD-plugin
+A lot of the work in this one was made using it as a reference! Go show it some love!
 
 ## Installing
 
