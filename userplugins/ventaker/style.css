@@ -1,0 +1,90 @@
+/* IMPORT CSS */
+@import url("https://raw.githubusercontent.com/Eldrazi7604/Walltaker-Vision-New-UI/refs/heads/ventaker/main.css");
+@import url("https://clearvision.github.io/ClearVision-v7/betterdiscord.css");
+@import url("https://clearvision.github.io/ClearVision-v7/vencord.css");
+
+/* SETTINGS */
+:root {
+  /* ACCENT COLORS */
+  --main-color: #2780e6;
+  --hover-color: #1e63b3;
+  --success-color: #43b581;
+  --danger-color: #982929;
+
+  /* STATUS COLORS */
+  --online-color: #43b581;
+  --idle-color: #faa61a;
+  --dnd-color: #982929;
+  --streaming-color: #593695;
+  --offline-color: #808080;
+
+  /* APP BACKGROUND */
+  --background-shading-percent: 100%;
+  --background-attachment: fixed;
+  --background-filter: saturate(calc(var(--saturation-factor, 1) * 1));
+
+  /* USER POPOUT BACKGROUND */
+  --user-popout-image: var(--background-image);
+  --user-popout-attachment: var(--background-attachment);
+  --user-popout-filter: var(--background-filter);
+
+  /* USER MODAL BACKGROUND */
+  --user-modal-image: var(--background-image);
+  --user-modal-attachment: var(--background-attachment);
+  --user-modal-filter: var(--background-filter);
+
+  /* HOME ICON */
+  --home-icon: url("https://clearvision.github.io/icons/discord.svg");
+
+  /* FONTS */
+  --main-font: "gg sans", whitney, "Helvetica Neue", helvetica, arial, sans-serif;
+  --code-font: consolas, "gg mono", "Liberation Mono", menlo, courier, monospace;
+}
+
+/* THEME SPECIFIC SHADING */
+
+/* LIGHT THEME */
+:is(.theme-light, .theme-dark .theme-light) {
+  --background-shading: rgb(252 252 252 / 30%);
+  --card-shading: rgb(252 252 252 / 30%);
+  --popout-shading: rgb(252 252 252 / 70%);
+  --modal-shading: rgb(252 252 252 / 50%);
+  --input-shading: rgb(0 0 0 / 30%);
+  --normal-text: #36363c;
+  --muted-text: #75757e;
+}
+
+/* ASH THEME */
+:is(.theme-dark, .theme-light .theme-dark) {
+  --background-shading: rgb(0 0 0 / 40%);
+  --card-shading: rgb(0 0 0 / 20%);
+  --popout-shading: rgb(0 0 0 / 60%);
+  --modal-shading: rgb(0 0 0 / 40%);
+  --input-shading: rgb(255 255 255 / 5%);
+  --normal-text: #d8d8db;
+  --muted-text: #aeaeb4;
+}
+
+/* DARK THEME */
+:is(.theme-darker, .theme-light .theme-darker) {
+  --background-shading: rgb(0 0 0 / 60%);
+  --card-shading: rgb(0 0 0 / 30%);
+  --popout-shading: rgb(0 0 0 / 70%);
+  --modal-shading: rgb(0 0 0 / 50%);
+  --input-shading: rgb(255 255 255 / 5%);
+  --normal-text: #fbfbfb;
+  --muted-text: #94949c;
+}
+
+/* ONYX THEME */
+:is(.theme-midnight, .theme-light .theme-midnight) {
+  --background-shading: rgb(0 0 0 / 80%);
+  --card-shading: rgb(0 0 0 / 40%);
+  --popout-shading: rgb(0 0 0 / 80%);
+  --modal-shading: rgb(0 0 0 / 60%);
+  --input-shading: rgb(255 255 255 / 5%);
+  --normal-text: #dcdcde;
+  --muted-text: #86868e;
+}
+
+/* ADD ADDITIONAL CSS BELOW HERE */
