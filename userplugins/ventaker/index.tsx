@@ -6,8 +6,9 @@
 
 import { definePluginSettings } from "@api/Settings";
 import definePlugin, { OptionType, StartAt } from "@utils/types";
-import { makeRange } from "@components/PluginSettings/components";
 import cssContent from "./style.css";
+
+
 
 let currentVideoUrl = null;
 
@@ -19,11 +20,9 @@ const settings = definePluginSettings({
         restartNeeded: true
     },
     intervalRate: {
-        type: OptionType.SLIDER,
-        description: "The rate (in seconds) at which to check for new backgrounds",
-        markers: makeRange(10, 100, 10),
+        type: OptionType.NUMBER,
+        description: "The rate (in seconds) at which to check for new backgrounds. A minimum of 30 seconds is enforced to reduce server strain",
         default: 30,
-        stickToMarkers: true,
         restartNeeded: true
     },
 });
@@ -143,7 +142,10 @@ export default definePlugin({
     async start() {
         console.log("Plugin loaded with settings:", settings);
         const { link } = settings.store;
-        const { intervalRate } = settings.store;
+        var { intervalRate } = settings.store;
+        if (intervalRate < 30) {
+            intervalRate = 30
+        }
         startBackgroundUpdate(link, intervalRate);
         applyStyles();
     }
